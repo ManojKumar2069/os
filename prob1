@@ -1,0 +1,101 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#define max 5
+int arr[max];
+void insert_at_pos(int data,int pos)
+{
+    if(pos>=max)
+    {
+        printf("Not a valid pos");
+    }
+    else
+    {
+        if(arr[pos]!=NULL)
+        {
+            printf("Data already avalable at the pos %d the data is %d\n",pos,arr[pos]);
+        }
+        else
+        {
+            arr[pos]=data;
+            printf("data inserted!!\n");
+        }
+    }
+}
+
+int delete_at_pos(int pos)
+{
+    if(pos>=max-1)
+    {
+        printf("Invalid position\n");
+    }
+    else
+    {
+        if(arr[pos]!=NULL)
+        {
+            printf("The deleted element is %d \n",arr[pos]);
+            arr[pos]=0;
+        }
+        else
+        {
+            printf("No element to delete\n");
+        }
+    }
+}
+
+void find_min()
+{
+    int min=arr[0];
+    int i=0;
+    int pos;
+    while(i<=max-1&&arr[i]!=NULL)
+    {
+        if(arr[i]<min)
+        {
+            min=arr[i];
+            i++;
+        }
+        else
+        {
+            i++;
+        }
+    }
+    for(pos=0;pos<=max-1;pos++)
+    {
+        if(arr[pos]==min)
+        {
+            break;
+        }
+        else
+        {
+            continue;
+        }
+    }
+    printf("The smallest element is %d and the position is %d\n",min,pos);
+}
+
+
+void display()
+{
+    for(int i=0;i<=max-1 && arr[i]!=NULL;i++)
+    {
+        printf("%d\n",arr[i]);
+    }
+}
+int main()
+{
+    arr[0]=5;
+    arr[1]=10;
+    display();
+    insert_at_pos(20,1);
+    insert_at_pos(30,2);
+    display();
+    //delete_at_pos(50);
+    //delete_at_pos(3);
+    //delete_at_pos(2);
+    //display();
+    arr[3]=3;
+    arr[4]=1;
+    find_min();
+    display();
+}
