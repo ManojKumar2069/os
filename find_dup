@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#define max 5
+int arr[max];
+
+typedef struct Node 
+{
+    int data;
+    int value;
+    struct Node* link;
+};
+struct Node *create_node(int data)
+{
+    struct Node* nn=(struct Node*)malloc(sizeof(struct Node));
+    if(nn==NULL)
+    {
+        printf("Memory not allocated");
+    }
+    else
+    {
+        nn->data=data;
+        nn->link=NULL;
+        nn->value=NULL;
+    }
+    return nn;
+};
+struct Node *insert()
+{
+    for(int i=0;i<=max-1;i++)
+    {
+        if(arr[i]!=NULL && )
+    }
+};
+int main()
+{
+    printf("Hello world!\n");
+    return 0;
+}
